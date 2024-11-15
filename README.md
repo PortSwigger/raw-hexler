@@ -25,6 +25,18 @@ NOTE: Changes to settings in an existing RawHex'ler tab will apply globally to a
 - **UTF-8 Postfix Notation**: Enable or disable the display of UTF-8 encoded characters alongside the HEX data, aiding in the interpretation of human-readable text within the binary data.
   **Attention**: Carriage-return (`\r`) and newline (`\n`) characters are displayed as spaces in the UTF-8 postfix. This postfix data is read-only, meaning any modifications to it will not alter the actual content.
 
+## Screenshots:
+
+![Request and Response in RawHex'ler](request_response_RawHex-ler.png)
+![Searching with HEX values in RawHex'ler](search_HEX_RawHex-ler.png)
+![Context-Menu in RawHex'ler](contextmenu.png)
+
+## Demo
+
+The following demo shows RawHex'ler in action by replacing a query string via copy&paste of HEX representation with the EICAR string.
+
+![Demo](RawHex-ler_in_action.gif)
+
 ## Author
 
 - Sebastian Vetter: https://github.com/svetterIO
