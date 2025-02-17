@@ -36,3 +36,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# Build artifacts
+out/artifacts/RawHex_ler_jar/RawHex-ler.jar
