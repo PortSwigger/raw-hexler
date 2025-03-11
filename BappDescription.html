@@ -1,0 +1,32 @@
+<p>RawHex'ler is a Burp Suite extension designed to enhance the handling of HEX data within HTTP requests and responses. It introduces a new, integrated tab that allows for seamless manipulation of raw HEX requests/responses in a hexdump format, offering greater flexibility compared to the standard Hex editor. RawHex'ler does not aim to replace the existing Hex editor tab but instead enhances Burp Suite by adding a missing feature that facilitates HEX byte(s) insertion via copy/paste.</p>
+
+<h2>Features</h2>
+
+<ul>
+	<li><b>HEX Handling:</b> Paste or modify raw HEX string(s) in a continuous line</li>
+	<li><b>Integrated Tab:</b> Adds a new tab in each HTTP Request/Response view (alongside Pretty, Raw, Hex, etc.) called RawHex'ler</li>
+	<li><b>Context Menu Access:</b> Right-click within the RawHex'ler tab to access a variety of display modes and settings, allowing you to tailor the HEX data presentation to your preferences</li>
+</ul>
+
+<h3>Bonus features</h3>
+
+<ul>
+	<li>Copy and paste EICAR or other antivirus-signatured content as HEX directly into a request/response without needing the file on disk</li>
+	<li>Search and highlight HEX strings with standard Burp Suite search field at the bottom of the RawHex'ler tab</li>
+</ul>
+
+<h2>Settings</h2>
+
+<p><b>NOTE:</b> Changes to settings in an existing RawHex'ler tab will apply globally to all newly created RawHex'ler tabs.</p>
+
+<ul>
+	<li><b>Prefix Offset:</b> Choose to add or remove a HEX offset representation at the start of each line. This helps in tracking byte positions within the data.</li>
+	<li><b>Space Delimiters:</b> Option to include or exclude space delimiters in the hex content for improved readability.</li>
+	<li><b>UTF-8 Postfix Notation:</b> Enable or disable the display of UTF-8 encoded characters alongside the HEX data, aiding in the interpretation of human-readable text within the binary data.<br>
+		<b>Attention:</b> Carriage-return (<code class="InlineCode">\r</code>)and newline (<code class="InlineCode">\n</code>) characters are displayed as spaces in the UTF-8 postfix. This postfix data is read-only, meaning any modifications to it will not alter the actual content.</li>
+</ul>
+
+<h2>Usage</h2>
+
+<p>A new tab will be added to your request and response editors.</p>
+<p>To access settings, right-click in the extension-generated tab.</p>

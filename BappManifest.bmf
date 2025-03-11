@@ -1,0 +1,13 @@
+Uuid: 4cf719dccf334a63809419859860b0c1
+ExtensionType: 1
+Name: Raw Hex'ler
+RepoName: raw-hexler
+ScreenVersion: 0.1.1
+SerialVersion: 1
+MinPlatformVersion: 16
+ProOnly: False
+Author: Sebastian Vetter
+ShortDescription: Enhances the handling of HEX data within HTTP requests and responses.
+EntryPoint: target/RawHex-ler-1.0-SNAPSHOT.jar
+BuildCommand: mvn package -DskipTests=true -Dmaven.javadoc.skip=true -B
+SupportedProducts: Pro, Community
