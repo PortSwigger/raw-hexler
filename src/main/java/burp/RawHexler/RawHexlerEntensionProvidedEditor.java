@@ -187,7 +187,16 @@ public class RawHexlerEntensionProvidedEditor implements ExtensionProvidedHttpRe
             StringBuilder result = new StringBuilder();
             for (String line : lines) {
                 String[] hexUtf8Array = line.split("\\s{3}"); // Split string among 3 spaces in row as separator
-                result.append(hexUtf8Array[0].replace(" --","")); // Only take first array element as this contains the hex values and remove -- hex place holder (normally only occurring at the end of a string a placeholders)
+                String eosChar = (rawHexlerHttpEditorProvider.isSpaceDelimiters())? " --" : "--";
+                result.append(hexUtf8Array[0].replace(eosChar,"")); // Only take first array element as this contains the hex values and remove -- hex place holder (normally only occurring at the end of a string a placeholders)
+            }
+            hexString = result.toString().trim();
+        }else{
+            //hexString=hexString.replace("\n","");
+            String[] lines = hexString.split("\n");
+            StringBuilder result = new StringBuilder();
+            for (String line : lines) {
+                result.append(line);
             }
             hexString = result.toString().trim();
         }
@@ -224,7 +233,8 @@ public class RawHexlerEntensionProvidedEditor implements ExtensionProvidedHttpRe
                 hexString.append('0');
             }
             hexString.append(hex);
-            if (rawHexlerHttpEditorProvider.isSpaceDelimiters() && !(!rawHexlerHttpEditorProvider.isPostfixUTF8() && (count == bytes.length))) {
+            //Append space between bytes (only inner bytes, not EOL)
+            if (rawHexlerHttpEditorProvider.isSpaceDelimiters() && !(count == bytes.length) && !((count % 16)==0)) {
                 hexString.append(" ");
             }
             if (rawHexlerHttpEditorProvider.isPostfixUTF8()){
@@ -234,16 +244,16 @@ public class RawHexlerEntensionProvidedEditor implements ExtensionProvidedHttpRe
                     rawUTF8String.append(" ");
                 }
                 if (count == bytes.length) {
-                    String eosChar = (rawHexlerHttpEditorProvider.isSpaceDelimiters())? "-- " : "--";
+                    String eosChar = (rawHexlerHttpEditorProvider.isSpaceDelimiters())? " --" : "--";
                     hexString.append(eosChar.repeat((16-(count%16))-(16*((16-(count%16))/16))));
                     if((count % 16)!=0){
-                        hexString.append("  ");
+                        hexString.append("   ");
                         hexString.append(rawUTF8String);
                     }
                 }
 
                 if((count % 16)==0){
-                    hexString.append("  ");
+                    hexString.append("   ");
                     hexString.append(rawUTF8String);
                     rawUTF8String = new StringBuilder();
                 }
