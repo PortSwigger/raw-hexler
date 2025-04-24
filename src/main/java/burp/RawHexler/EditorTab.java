@@ -14,7 +14,6 @@ public class EditorTab implements BurpExtension {
         api.extension().setName("RawHex-ler");
         api.logging().logToOutput("Author: SVETTERIO");
 
-        // 🔥 Load version from properties file
         String version = loadVersion();
         api.logging().logToOutput("Version: " + version);
 

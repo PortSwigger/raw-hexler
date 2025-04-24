@@ -31,7 +31,6 @@
         </resources>
 
         <plugins>
-            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -42,7 +41,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Maven Jar Plugin: Custom filename -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
